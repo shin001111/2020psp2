@@ -3,8 +3,13 @@
 #include <string.h>
 #include <math.h>
 
-extern double ave_online(double val,double ave)
-extern double var_online()
+
+extern double ave_online(double val,double ave);
+extern double var_online(double val,double var,double ave,double ave2);
+int nr = 1;
+double ave = 0;
+double ave2 = 0;
+double var = 0;
 
 int main(void)
 {
@@ -27,12 +32,16 @@ int main(void)
     while(fgets(buf,sizeof(buf),fp) != NULL){
         sscanf(buf,"%lf",&val);
 
-
-    
-
-
+        ave = ave_online(val,ave);
+        ave2 = ave_online(val*val,ave2);
+        var = var_online(val,var,ave,ave2);
+        nr++;
 
     }
+
+printf("%lf\n",ave);
+printf("%lf\n",var);
+
 
     if(fclose(fp) == EOF){
         fputs("file close error\n",stderr);
@@ -45,3 +54,12 @@ int main(void)
 
 }
 
+double ave_online(double val,double ave)
+{
+return  ( ( ( nr - 1 ) * ave ) / nr ) + ( val / nr );
+}
+
+double var_online(double val,double var,double ave,double ave2)
+{
+return 0;
+}
