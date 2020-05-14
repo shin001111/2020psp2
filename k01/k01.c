@@ -3,7 +3,6 @@
 #include <string.h>
 #include <math.h>
 
-
 extern double ave_online(double val,double ave);
 extern double var_online(double val,double var,double ave,double ave2);
 int nr = 1;
