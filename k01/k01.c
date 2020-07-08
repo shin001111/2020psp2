@@ -36,7 +36,7 @@ int main(void)
         var = var_online(val,var,ave,ave2);
         nr++;
 
-    }
+    } 
 
 printf("%lf\n",ave);
 printf("%lf\n",var);
