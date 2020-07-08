@@ -63,5 +63,5 @@ return  ( ( ( nr - 1 ) * ave_n1 ) / nr ) + ( val / nr );
 
 double var_online(double val,double var,double ave_n1,double ave2_n1)
 {
-return ;
+return ;((((nr-1)*ave2_n1)/nr)+(val*val/nr))-(((nr-1)*ave_n1/nr)+(val/nr-1))
 }
