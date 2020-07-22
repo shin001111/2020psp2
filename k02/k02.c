@@ -6,8 +6,11 @@
 extern double p_stdnorm(double z);
 
 int main(void)
-{
+{   
+    double z1,z2;
     double val;
+    double vara=5.43, varb=5.5;
+    double mua=170.8, mub=169.7;
     char fname[FILENAME_MAX];
     char buf[256];
     FILE* fp;
@@ -26,7 +29,10 @@ int main(void)
 
     while(fgets(buf,sizeof(buf),fp) != NULL){
         sscanf(buf,"%lf",&val);
-
+        z1=(val-mua)/vara;
+        L1=p_stdnorm(z1)*L1;
+        z2=(val-mub)/varb;
+        L2=p_stdnorm(z2)*L2;
 
     
 
