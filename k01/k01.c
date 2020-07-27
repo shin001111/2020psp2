@@ -40,10 +40,12 @@ int main(void)
         ave_n1=ave;
         ave2_n1=ave2;
     }
-
+population mean=ave;
+population var=double var_online(double val,double var,double ave_n1,double ave2_n1)*nr/nr-1;
 printf("%lf\n",ave);
 printf("%lf\n",var);
-
+printf("%lf\n",population mean);
+printf("%lf\n",population var);
 
     if(fclose(fp) == EOF){
         fputs("file close error\n",stderr);
@@ -63,5 +65,5 @@ return  ( ( ( nr - 1 ) * ave_n1 ) / nr ) + ( val / nr );
 
 double var_online(double val,double var,double ave_n1,double ave2_n1)
 {
-return ;((((nr-1)*ave2_n1)/nr)+(val*val/nr))-(((nr-1)*ave_n1/nr)+(val/nr-1))
+return (ave_online(double val*val,double ave2_n1))-(((nr-1)*ave_n1/nr)+(val/nr-1));
 }
