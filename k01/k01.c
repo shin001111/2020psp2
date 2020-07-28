@@ -11,7 +11,8 @@ double ave_n1 = 0;
 double ave2 = 0;
 double ave2_n1=0;
 double var = 0;
-
+double population mean;
+double population var;
 int main(void)
 {
     double val;
@@ -41,7 +42,7 @@ int main(void)
         ave2_n1=ave2;
     }
 population mean=ave;
-population var=double var_online(double val,double var,double ave_n1,double ave2_n1)*nr/nr-1;
+population var=var_online(double val,double var,double ave_n1,double ave2_n1)*nr/nr-1;
 printf("%lf\n",ave);
 printf("%lf\n",var);
 printf("%lf\n",population mean);
@@ -65,5 +66,5 @@ return  ( ( ( nr - 1 ) * ave_n1 ) / nr ) + ( val / nr );
 
 double var_online(double val,double var,double ave_n1,double ave2_n1)
 {
-return (ave_online(double val*val,double ave2_n1))-(((nr-1)*ave_n1/nr)+(val/nr-1));
+return (ave_online(val*val, ave2_n1))-(((nr-1)*ave_n1/nr)+(val/nr-1));
 }
