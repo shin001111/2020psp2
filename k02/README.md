@@ -29,4 +29,5 @@ Likelihood for B：
 ```
 
 ## 修正履歴
-
+[comment #20200728]
+- max_val,min_valは恐らく不要です。他の変数を出力してください。
