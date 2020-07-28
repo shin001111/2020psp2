@@ -43,7 +43,7 @@ int main(void)
         ave2_n1=ave2;
     }
 populationmean=ave;
-populationvar=(var_online(val, ave_n1, ave2_n1))*(double)nr/(double)nr-1;
+populationvar=var*nr/(nr-1);
 printf("%lf\n",ave);
 printf("%lf\n",var);
 printf("%lf\n",populationmean);
@@ -67,5 +67,5 @@ return  ( ( ( nr - 1 ) * ave_n1 ) / nr ) + ( val / nr );
 
 double var_online(double val,double ave_n1,double ave2_n1)
 {
-return (ave_online(val*val, ave2_n1))-(((nr-1)*ave_n1/nr)+(val/nr-1));
+return (ave_online(val*val, ave2_n1)-ave_n1*ave_n1);
 }
