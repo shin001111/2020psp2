@@ -4,15 +4,16 @@
 #include <math.h>
 
 extern double ave_online(double val,double ave);
-extern double var_online(double val,double var,double ave,double ave2);
+extern double var_online(double val,double ave,double ave2);
 int nr = 1;
 double ave= 0;
 double ave_n1 = 0;
 double ave2 = 0;
 double ave2_n1=0;
 double var = 0;
-double population mean;
-double population var;
+double populationmean;
+double populationvar;
+double val;
 int main(void)
 {
     double val;
@@ -36,17 +37,17 @@ int main(void)
 
         ave = ave_online(val,ave_n1);
         ave2 = ave_online(val*val,ave2_n1);
-        var = var_online(val,var,ave,ave2_n1);
+        var = var_online(val,ave,ave2_n1);
         nr++;
         ave_n1=ave;
         ave2_n1=ave2;
     }
-population mean=ave;
-population var=var_online(double val,double var,double ave_n1,double ave2_n1)*nr/nr-1;
+populationmean=ave;
+populationvar=(var_online(val, ave_n1, ave2_n1))*(double)nr/(double)nr-1;
 printf("%lf\n",ave);
 printf("%lf\n",var);
-printf("%lf\n",population mean);
-printf("%lf\n",population var);
+printf("%lf\n",populationmean);
+printf("%lf\n",populationvar);
 
     if(fclose(fp) == EOF){
         fputs("file close error\n",stderr);
@@ -64,7 +65,7 @@ double ave_online(double val,double ave_n1)
 return  ( ( ( nr - 1 ) * ave_n1 ) / nr ) + ( val / nr );
 }
 
-double var_online(double val,double var,double ave_n1,double ave2_n1)
+double var_online(double val,double ave_n1,double ave2_n1)
 {
 return (ave_online(val*val, ave2_n1))-(((nr-1)*ave_n1/nr)+(val/nr-1));
 }
