@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#define _USE_MATH_DEFINES
 #include <math.h>
 #ifdef CONST_SEED
 #define RAND_SEED 2020
@@ -20,9 +21,9 @@ int main(int argc, char* argv[])
     int i;
     double dummy;
 
-
-
-
+    sscanf(argv[1],"%lf",&mu);
+    sscanf(argv[2],"%lf",&sigma);       
+    sscanf(argv[3],"%d",&num_dummy);     
 
     printf("============================================\n");
     printf("template mean: %4.1lf\n",mu);
@@ -31,10 +32,10 @@ int main(int argc, char* argv[])
     printf("============================================\n");
 
     srand(RAND_SEED);
-    for(i=0;i<6;i++ ){
+    for(i=1;i<num_dummy;i++ ){
         /* r_stdnormを使って，1人のデータを捏造 */
-        r_stdnorm
-        dummy =   ;
+        
+        dummy=r_stdnorm()*sigma+mu;
         printf("%5.2lf\n",dummy);
     }
 

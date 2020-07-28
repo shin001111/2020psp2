@@ -66,7 +66,7 @@ int main(int argc, char* argv[])
 
 
 ## ソースコードの説明
-34行目for文の中身を追加。p_stdnormをどう使えばよいかわかりません
+arg[]に格納されたデータを24~26行目でmu,sigma,num_dummyに入れる。dummyの数だけ34行目のfor文をループさせる。
 ## 入出力結果
 
 以下は例です． コンパイルするときに`-DCONST_SEED`をつけるとこうなります．
