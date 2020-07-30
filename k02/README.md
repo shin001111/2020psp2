@@ -34,3 +34,27 @@ Likelihood for B：
 ## 修正履歴
 [comment #20200728]
 - max_val,min_valは恐らく不要です。他の変数を出力してください。
+
+[comment #20200731 sonoda]
+- ```
+  double vara=5.43, varb=5.5;
+  double mua=170.8, mub=169.7;
+  ```
+  とmain関数の中に直接数値を書いていますが，「関数の中に生の数字は書かない」が原則です．
+  
+  main関数の前の，`#include`の並びに，文字列置換マクロである，
+  ```
+  #define SDA 5.43
+  #define SDB 5.5
+  #define MUA 170.8
+  #define MUB 169.7
+  ```
+  を加え，main関数のほうでは，
+  ```
+  double sda=SDA, sdb=SDB;
+  double mua=MUA, mub=MUB;
+  ```
+  などとします．教科書とかではそうなっていませんが，絶対このほうがいいです．
+  ちなみに，varは分散varianceを連想させるので，それなら`vara = (5.43)*(5.43);` ですね．ソースコードの中の使い方からすると，これは標準偏差standard deviation, `stdv`とか`sd`という名前がいいと思います．
+
+  
