@@ -80,3 +80,6 @@ the filename of sample: ../sample/heights_male.csv
 [comment #20200731 sonoda]
 - 私のところで試したところ，うまくいっているようなので，完了にしておきますが
 - 上の入出力結果の項に，実際の実行結果をコピペしてください．
+
+[comment #20200731 sonoda]
+- 課題1の完了を確認しました
