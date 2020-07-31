@@ -55,12 +55,11 @@ populationmean,populationvarの宣言を行いました。14.15行目
 ## 入出力結果
 
 ```
-input the filename of sample:../sample/heights_male.csv
 the filename of sample: ../sample/heights_male.csv
-sample mean：
-sample variance：
-population mean (estimated)：
-population variance (estimated)：
+173.888750
+25.361711
+173.888750
+28.531925
 ```
 
 ## 修正履歴

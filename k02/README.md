@@ -29,8 +29,10 @@ z1 とZ2を定義し、32,34行目で標準化、33,35行目で尤度を求め�
 ## 入出力結果
 
 ```
-Likelihood for A：
-Likelihood for B：
+input the filename of sample:../sample/heights_male.csv
+the filename of sample: ../sample/heights_male.csv
+L_A: 0.000006
+L_B: 0.000002
 ```
 
 ## 修正履歴
