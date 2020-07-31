@@ -3,6 +3,11 @@
 #include <string.h>
 #define _USE_MATH_DEFINES
 #include <math.h>
+#define SDA 5.43
+#define SDB 5.5
+#define MUA 170.8
+#define MUB 169.7
+
 
 extern double p_stdnorm(double z);
 
@@ -10,8 +15,8 @@ int main(void)
 {   
     double z1,z2;
     double val;
-    double vara=5.43, varb=5.5;
-    double mua=170.8, mub=169.7;
+    double sda=SDA, sdb=SDB;
+    double mua=MUA, mub=MUB;
     char fname[FILENAME_MAX];
     char buf[256];
     FILE* fp;
@@ -30,9 +35,9 @@ int main(void)
 
     while(fgets(buf,sizeof(buf),fp) != NULL){
         sscanf(buf,"%lf",&val);
-        z1=(val-mua)/vara;
+        z1=(val-mua)/sda;
         L1=p_stdnorm(z1)*L1;
-        z2=(val-mub)/varb;
+        z2=(val-mub)/sdb;
         L2=p_stdnorm(z2)*L2;
 
     
